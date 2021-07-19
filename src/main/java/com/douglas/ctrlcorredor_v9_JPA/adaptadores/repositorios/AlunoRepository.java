@@ -2,7 +2,9 @@ package com.douglas.ctrlcorredor_v9_JPA.adaptadores.repositorios;
 
 import java.util.List;
 
+import com.douglas.ctrlcorredor_v9_JPA.negocio.entidades.Aluno;
 import com.douglas.ctrlcorredor_v9_JPA.negocio.entidades.Corredor;
+import com.douglas.ctrlcorredor_v9_JPA.negocio.repositorios.IAlunoRepository;
 import com.douglas.ctrlcorredor_v9_JPA.negocio.repositorios.ICorredorRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,22 +26,22 @@ public class AlunoRepository implements IAlunoRepository {
 */
     }
     
-    public List<Corredor> todos() {
+    public List<Aluno> todos() {
         return alunoCRUD.findAll();
 
     }
 
-    public List<Corredor> procurar(String cpf) {
-        List<Corredor> resp = corredorCRUD.findByCpf(cpf);
+    public List<Aluno> procurar(String cpf) {
+        List<Aluno> resp = alunoCRUD.findByCpf(cpf);
         return resp;
     }
 
     public void removeTodos(){
-        corredorCRUD.deleteAll();
+        alunoCRUD.deleteAll();
     }
 
-    public boolean cadastra(Corredor corredor){
-        corredorCRUD.save(corredor);
+    public boolean cadastra(Aluno aluno){
+        alunoCRUD.save(aluno);
         return true;
     }
 }

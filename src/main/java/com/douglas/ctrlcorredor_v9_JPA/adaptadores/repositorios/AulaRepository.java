@@ -5,8 +5,6 @@ import java.util.stream.Collectors;
 
 import com.douglas.ctrlcorredor_v9_JPA.negocio.entidades.Aluno;
 import com.douglas.ctrlcorredor_v9_JPA.negocio.entidades.Aula;
-import com.douglas.ctrlcorredor_v9_JPA.negocio.entidades.Corredor;
-import com.douglas.ctrlcorredor_v9_JPA.negocio.entidades.Evento;
 import com.douglas.ctrlcorredor_v9_JPA.negocio.repositorios.IAulaRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;

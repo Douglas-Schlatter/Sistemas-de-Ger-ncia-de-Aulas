@@ -1,5 +1,7 @@
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\ctrlcorredor_v9_JPA\aplicacao\dtos\PerformanceDTO.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\ctrlcorredor_v9_JPA\aplicacao\casosDeUso\ConsultaEventosUC.java
+C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\ctrlcorredor_v9_JPA\adaptadores\repositorios\AlunoRepository.java
+C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\ctrlcorredor_v9_JPA\negocio\servicos\ServicoAluno.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\ctrlcorredor_v9_JPA\negocio\repositorios\IAulaRepository.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\ctrlcorredor_v9_JPA\aplicacao\casosDeUso\CadastraCorredoresUC.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\ctrlcorredor_v9_JPA\negocio\servicos\ServicoCorredor.java
@@ -16,12 +18,16 @@ C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\sr
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\ctrlcorredor_v9_JPA\aplicacao\servicos\EstatisticaNormal.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\ctrlcorredor_v9_JPA\aplicacao\casosDeUso\ConsultaCorredoresUC.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\ctrlcorredor_v9_JPA\negocio\entidades\Evento.java
+C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\ctrlcorredor_v9_JPA\negocio\repositorios\IAlunoRepository.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\ctrlcorredor_v9_JPA\aplicacao\casosDeUso\CadastraEventoUC.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\ctrlcorredor_v9_JPA\negocio\entidades\Corredor.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\ctrlcorredor_v9_JPA\negocio\repositorios\ICorredorRepository.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\ctrlcorredor_v9_JPA\negocio\entidades\Aula.java
+C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\ctrlcorredor_v9_JPA\adaptadores\repositorios\IAlunoCRUD.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\ctrlcorredor_v9_JPA\aplicacao\dtos\EstatisticasDTO.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\ctrlcorredor_v9_JPA\CtrlcorredorV7Application.java
+C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\ctrlcorredor_v9_JPA\adaptadores\repositorios\AulaRepository.java
+C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\ctrlcorredor_v9_JPA\adaptadores\repositorios\IAulaCRUD.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\ctrlcorredor_v9_JPA\aplicacao\casosDeUso\ConsultaEstatisticasUC.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\ctrlcorredor_v9_JPA\adaptadores\repositorios\IEventoCRUD.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\ctrlcorredor_v9_JPA\adaptadores\controllers\CtrlCorridasController.java
