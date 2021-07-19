@@ -8,8 +8,8 @@
 		<version>2.4.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.bcopstein</groupId>
-	<artifactId>ctrlcorredor_v8</artifactId>
+	<groupId>com.douglas</groupId>
+	<artifactId>SGA</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ctrlcorredor_v8_JPA</name>
 	<description>Controle corredor versão OCP Strategy</description>
