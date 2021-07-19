@@ -116,6 +116,8 @@ public class RequestController {
         return consultaPerformanceUC.run(distancia, ano);
     }
     //-------------------------------minhas consultas
+    
+    
     @GetMapping("/todasAulas")
     @CrossOrigin(origins = "*")
     public List<Aula> consultaAulas() {
@@ -136,4 +138,6 @@ public class RequestController {
 
         return true;
     }
+
+    
 }

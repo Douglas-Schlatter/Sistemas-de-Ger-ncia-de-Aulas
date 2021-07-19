@@ -3,9 +3,10 @@ package com.douglas.SGA.adaptadores.repositorios;
 import java.util.List;
 
 import com.douglas.SGA.negocio.entidades.Aluno;
-import com.douglas.SGA.negocio.entidades.Corredor;
+import com.douglas.SGA.negocio.entidades.Aula;
+//import com.douglas.SGA.negocio.entidades.Corredor;
 import com.douglas.SGA.negocio.repositorios.IAlunoRepository;
-import com.douglas.SGA.negocio.repositorios.ICorredorRepository;
+//import com.douglas.SGA.negocio.repositorios.ICorredorRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -13,10 +14,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class AlunoRepository implements IAlunoRepository {
     private IAlunoCRUD alunoCRUD;
+    private IAulaCRUD aulaCRUD;
 
     @Autowired
-    public AlunoRepository(IAlunoCRUD alunoCRUD) {
+    public AlunoRepository(IAlunoCRUD alunoCRUD,IAulaCRUD aulaCRUD ) {
         this.alunoCRUD = alunoCRUD;
+        this.aulaCRUD = aulaCRUD;
 /*
         this.jdbcTemplate.execute("DROP TABLE corredores IF EXISTS");
         this.jdbcTemplate.execute("CREATE TABLE corredores("
@@ -44,4 +47,23 @@ public class AlunoRepository implements IAlunoRepository {
         alunoCRUD.save(aluno);
         return true;
     }
+
+    public boolean inscreve(String nome,String id)
+    {
+        //Podem ter mais de um aluno com o mesmo nome 
+        //deveria ser com o cpf, se sobrar tempo farei com cpf 
+        //aqui pega o primeiro aluno com esse nome
+        Aluno targetS = alunoCRUD.findByNome(nome).get(0);
+        Aula targetC = aulaCRUD.findByid(id);
+        if (targetS != null && targetC != null)
+        {  
+            targetS.addAula(targetC);
+            alunoCRUD.save(targetS);
+            aulaCRUD.save(targetC);
+            return true;
+        }
+        return false;
+        //alunoCRUD.save(aluno);
+    }
+
 }

@@ -32,5 +32,7 @@ public class ServicoAluno {
         //alunoRep.removeTodos();
         alunoRep.cadastra(aluno);
     }
-    
+    public boolean inscreve(String nome,String id){
+        return alunoRep.inscreve(nome,id);
+    }
 }
