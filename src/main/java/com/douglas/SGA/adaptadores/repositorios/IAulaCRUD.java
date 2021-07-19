@@ -8,5 +8,5 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface IAulaCRUD extends CrudRepository<Aula,String> {
     List<Aula> findAll();
-    List<Aula> findByIdComposto(String idComposto);
+    List<Aula> findByid(String idComposto);
 }

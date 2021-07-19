@@ -9,6 +9,7 @@ import com.douglas.SGA.aplicacao.casosDeUso.ConsultaCorredoresUC;
 import com.douglas.SGA.aplicacao.casosDeUso.ConsultaEstatisticasUC;
 import com.douglas.SGA.aplicacao.casosDeUso.ConsultaEventosUC;
 import com.douglas.SGA.aplicacao.casosDeUso.ConsultaPerformanceUC;
+import com.douglas.SGA.aplicacao.casosDeUso.ConsultaAulaUC;
 import com.douglas.SGA.aplicacao.dtos.EstatisticasDTO;
 import com.douglas.SGA.aplicacao.dtos.PerformanceDTO;
 import com.douglas.SGA.negocio.entidades.Aula;
@@ -34,11 +35,13 @@ public class RequestController {
     private ConsultaEstatisticasUC consultaEstatisticasUC;
     private ConsultaPerformanceUC consultaPerformanceUC;
     private CadastraAulaUC cadastraAulaUC;
+    private ConsultaAulaUC consultaAulaUC;
 
     @Autowired
     public RequestController(ConsultaCorredoresUC consultaCorredoresUC, CadastraCorredoresUC cadastraCorredoresUC,
             ConsultaEventosUC consultaEventosUC, CadastraEventoUC cadastraEventoUC,
-            ConsultaEstatisticasUC consultaEstatisticasUC, ConsultaPerformanceUC consultaPerformanceUC, CadastraAulaUC cadastraAulaUC) {
+            ConsultaEstatisticasUC consultaEstatisticasUC, ConsultaPerformanceUC consultaPerformanceUC,
+             CadastraAulaUC cadastraAulaUC,ConsultaAulaUC consultaAulaUC) {
         this.consultaCorredoresUC = consultaCorredoresUC;
         this.cadastraCorredoresUC = cadastraCorredoresUC;
         this.consultaEventosUC = consultaEventosUC;
@@ -46,6 +49,7 @@ public class RequestController {
         this.consultaEstatisticasUC = consultaEstatisticasUC;
         this.consultaPerformanceUC = consultaPerformanceUC;
         this.cadastraAulaUC = cadastraAulaUC;
+        this.consultaAulaUC = consultaAulaUC;
     }
 
     @GetMapping("/corredores")
@@ -75,6 +79,8 @@ public class RequestController {
         return result;
     }
 
+
+
     @GetMapping("/eventos")
     @CrossOrigin(origins = "*")
     public List<Evento> consultaEventos(String cpf) {
@@ -97,19 +103,6 @@ public class RequestController {
         return true;
     }
 
-    @PostMapping("/abrirAula") 
-    // se tenho vários corredores precisamos "receber"
-    // para saber de quem é o evento
-    @CrossOrigin(origins = "*")
-    public boolean informaAula(String cpf,
-                @RequestBody final Aula aula) {
-        
-        cadastraAulaUC.run(cpf, aula);
-
-
-
-        return true;
-    }
 
     @GetMapping("/estatisticas")
     @CrossOrigin(origins = "*")
@@ -121,5 +114,26 @@ public class RequestController {
     @CrossOrigin(origins = "*")
     public PerformanceDTO aumentoPerformance(@RequestParam final Integer distancia, @RequestParam final Integer ano) {
         return consultaPerformanceUC.run(distancia, ano);
+    }
+    //-------------------------------minhas consultas
+    @GetMapping("/todasAulas")
+    @CrossOrigin(origins = "*")
+    public List<Aula> consultaAulas() {
+        List<Aula> result = consultaAulaUC.run();
+        return result;
+    }
+
+    @PostMapping("/AbrirAula") 
+    // se tenho vários corredores precisamos "receber"
+    // para saber de quem é o evento
+    @CrossOrigin(origins = "*")
+    public boolean informaAula(String cpf,
+                @RequestBody final Aula aula) {
+        
+        cadastraAulaUC.run(cpf, aula);
+
+
+
+        return true;
     }
 }

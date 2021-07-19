@@ -16,7 +16,7 @@ import javax.persistence.OneToMany;
 @Entity(name = "aula")
 public class Aula {
     @Id
-    private String idComposto;
+    private String id;
     
     private String codcred;
     private int idturma;
@@ -24,7 +24,7 @@ public class Aula {
     private int mes;
 
     public String getIdComposto() {
-        return idComposto;
+        return id;
     }
 
     public String getCodcred() {
@@ -34,7 +34,7 @@ public class Aula {
 
     public void setCodcred(String codcred) {
         this.codcred = codcred;
-        idComposto = codcred + "-" + idturma;
+        id = codcred + "-" + idturma;
     }
 
 
@@ -45,7 +45,7 @@ public class Aula {
 
     public void setIdturma(int idturma) {
         this.idturma = idturma;
-        idComposto = codcred + "-" + idturma;
+        id = codcred + "-" + idturma;
     }
 
 
@@ -110,7 +110,7 @@ public class Aula {
     //TODO verificar se trará problemas comentar isso
     
     public Aula( String codcred, int idturma, int dia, int mes) {
-        this.idComposto = codcred + "-" + idturma;
+        this.id = codcred + "-" + idturma;
         
         this.codcred = codcred;
         this.idturma = idturma;
@@ -124,7 +124,7 @@ public class Aula {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Aula )) return false;
-        return idComposto == (((Aula) o).getIdComposto());
+        return id == (((Aula) o).getIdComposto());
     }
     
     
