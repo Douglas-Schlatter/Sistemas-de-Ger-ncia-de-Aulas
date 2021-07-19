@@ -77,6 +77,9 @@ public class Aula {
     public void setAlunos(List<Aluno> aluno) {
         this.alunos = alunos;
     }
+    public void addAluno(Aluno aluno) {
+        alunos.add(aluno);
+    }
 
     public void removeAluno(Aluno aluno) {
         alunos.remove(aluno);
@@ -106,7 +109,7 @@ public class Aula {
 
     //TODO verificar se trará problemas comentar isso
     
-    public Aula( int codcred, int idturma, int dia, int mes) {
+    public Aula( String codcred, int idturma, int dia, int mes) {
         this.idComposto = codcred + "-" + idturma;
         
         this.codcred = codcred;

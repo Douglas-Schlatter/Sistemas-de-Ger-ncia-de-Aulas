@@ -67,6 +67,13 @@ public class Aluno  {
         aula.removeAluno(this);
         //aula.setCorredor(null);
     }
+    public void addAula(Aula aula) {
+        aulas.add(aula);
+        aula.addAluno(this);
+        //aula.setCorredor(null);
+    }
+
+
 
     
     @Override

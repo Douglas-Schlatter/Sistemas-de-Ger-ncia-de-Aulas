@@ -3,26 +3,28 @@ package com.douglas.ctrlcorredor_v9_JPA.adaptadores.repositorios;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.douglas.ctrlcorredor_v9_JPA.negocio.entidades.Aluno;
+import com.douglas.ctrlcorredor_v9_JPA.negocio.entidades.Aula;
 import com.douglas.ctrlcorredor_v9_JPA.negocio.entidades.Corredor;
 import com.douglas.ctrlcorredor_v9_JPA.negocio.entidades.Evento;
-import com.douglas.ctrlcorredor_v9_JPA.negocio.repositorios.IEventoRepository;
+import com.douglas.ctrlcorredor_v9_JPA.negocio.repositorios.IAulaRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AulaRepository implements IEventoRepository{
+public class AulaRepository implements IAulaRepository{
     //private JdbcTemplate jdbcTemplate;
-    private IEventoCRUD eventoCRUD;
-    private ICorredorCRUD corredorCRUD;    
+    private IAulaCRUD aulaCRUD;
+    private IAlunoCRUD alunoCRUD;    
 
     @Autowired
     //public EventoRepository(JdbcTemplate jdbcTemplate) {
-    public EventoRepository(IEventoCRUD eventoCRUD,
-    ICorredorCRUD corredorCRUD) {
-        this.eventoCRUD = eventoCRUD;
-        this.corredorCRUD = corredorCRUD;
+    public AulaRepository(IAulaCRUD aulaCRUD,
+    IAlunoCRUD alunoCRUD) {
+        this.aulaCRUD = aulaCRUD;
+        this.alunoCRUD = alunoCRUD;
     
         //this.jdbcTemplate = jdbcTemplate;  
         //this.jdbcTemplate.execute("DROP TABLE eventos IF EXISTS");
@@ -35,8 +37,8 @@ public class AulaRepository implements IEventoRepository{
         //cadastra(new Evento(4,"Summer Night Run",18,12,2019,5,0,32,25));
     }  
 
-    public List<Evento> todos() {
-        List<Evento> resp = eventoCRUD.findAll();
+    public List<Aula> todos() {
+        List<Aula> resp = aulaCRUD.findAll();
         return resp;
         /*
         List<Evento> resp = this.jdbcTemplate.query("SELECT * from eventos",
@@ -47,15 +49,17 @@ public class AulaRepository implements IEventoRepository{
         */
     }
 
-    public List<Evento> todos(String cpf) {
-        return  eventoCRUD.findAll().stream().filter(e->e.getCorredorId().equals(cpf)).collect(Collectors.toList());     
+    public List<Aula> procurar(String idComposto) {
+        return  aulaCRUD.findAll().stream().filter(e->e.getIdComposto().equals(idComposto)).collect(Collectors.toList());     
     }
 
-    public boolean cadastra(String cpf, Evento evento){
-        Corredor corredor = corredorCRUD.findById(cpf).get();
-        if (corredor != null) {
-            evento.setCorredor(corredor);
-            eventoCRUD.save(evento);
+    public boolean cadastra(String cpf, Aula aula){
+        Aluno aluno = alunoCRUD.findById(cpf).get();
+        //lembrar de fazer isso no aluno tambem de adicionar em
+        if (aluno != null) {
+            aula.addAluno(aluno);
+            aluno.addAula(aula);
+            aulaCRUD.save(aula);
             return true;
         }
         return false;

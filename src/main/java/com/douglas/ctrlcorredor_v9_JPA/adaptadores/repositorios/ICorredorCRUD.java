@@ -6,7 +6,7 @@ import com.douglas.ctrlcorredor_v9_JPA.negocio.entidades.Corredor;
 
 import org.springframework.data.repository.CrudRepository;
 
-public interface IAulaCRUD extends CrudRepository<Aula,String> {
-    List<Aula> findAll();
+public interface ICorredorCRUD extends CrudRepository<Corredor,String> {
+    List<Corredor> findAll();
     List<Corredor> findByCpf(String cpf);
 }
