@@ -7,6 +7,6 @@ import com.douglas.SGA.negocio.entidades.Aula;
 public interface IAulaRepository 
 {
     List<Aula> todos();
-    List<Aula> procurar(String cpf);
+    List<Aula> procurar(String id);
     boolean cadastra(String cpf, Aula evento);
 }
