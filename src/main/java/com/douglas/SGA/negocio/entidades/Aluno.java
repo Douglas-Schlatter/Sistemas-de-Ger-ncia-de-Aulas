@@ -1,3 +1,10 @@
+
+/*
+Tecnicas de Programação-PUCRS
+Matricula: 20106324-5
+Nome:Douglas Ardenghi Schlatter
+Github: https://github.com/Douglas-Schlatter/Sistemas-de-Ger-ncia-de-Aulas
+*/
 package com.douglas.SGA.negocio.entidades;
 
 import java.util.ArrayList;
@@ -79,8 +86,8 @@ public class Aluno  {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Corredor )) return false;
-        return cpf != null && cpf.equals(((Corredor) o).getCpf());
+        if (!(o instanceof Aluno )) return false;
+        return cpf != null && cpf.equals(((Aluno) o).getCpf());
     }
  
     @Override
