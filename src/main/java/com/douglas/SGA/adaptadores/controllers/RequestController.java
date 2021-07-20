@@ -11,6 +11,7 @@ import com.douglas.SGA.aplicacao.casosDeUso.ConsultaCorredoresUC;
 import com.douglas.SGA.aplicacao.casosDeUso.ConsultaEstatisticasUC;
 import com.douglas.SGA.aplicacao.casosDeUso.ConsultaEventosUC;
 import com.douglas.SGA.aplicacao.casosDeUso.ConsultaPerformanceUC;
+import com.douglas.SGA.aplicacao.casosDeUso.InscreverAlunoUC;
 import com.douglas.SGA.aplicacao.casosDeUso.ConsultaAulaUC;
 import com.douglas.SGA.aplicacao.dtos.EstatisticasDTO;
 import com.douglas.SGA.aplicacao.dtos.PerformanceDTO;
@@ -41,13 +42,14 @@ public class RequestController {
     private ConsultaAulaUC consultaAulaUC;
     private CadastraAlunoUC cadastraAlunoUC;
     private ConsultaAlunoUC consultaAlunoUC;
+    private InscreverAlunoUC inscreverAlunoUC;
 
     @Autowired
     public RequestController(ConsultaCorredoresUC consultaCorredoresUC, CadastraCorredoresUC cadastraCorredoresUC,
             ConsultaEventosUC consultaEventosUC, CadastraEventoUC cadastraEventoUC,
             ConsultaEstatisticasUC consultaEstatisticasUC, ConsultaPerformanceUC consultaPerformanceUC,
              CadastraAulaUC cadastraAulaUC,ConsultaAulaUC consultaAulaUC,ConsultaAlunoUC consultaAlunoUC
-             ,CadastraAlunoUC cadastraAlunoUC) {
+             ,CadastraAlunoUC cadastraAlunoUC,InscreverAlunoUC inscreverAlunoUC) {
         this.consultaCorredoresUC = consultaCorredoresUC;
         this.cadastraCorredoresUC = cadastraCorredoresUC;
         this.consultaEventosUC = consultaEventosUC;
@@ -58,6 +60,7 @@ public class RequestController {
         this.consultaAulaUC = consultaAulaUC;
         this.cadastraAlunoUC = cadastraAlunoUC;
         this.consultaAlunoUC = consultaAlunoUC;
+        this.inscreverAlunoUC = inscreverAlunoUC;
     }
 
     @GetMapping("/corredores")
@@ -156,11 +159,23 @@ public class RequestController {
         return result;
     }
 
+    @GetMapping("/procuraAluno")
+    @CrossOrigin(origins = "*")
+    public Aluno procuraAluno(String cpf) {
+        Aluno result = consultaAlunoUC.run(cpf);
+        return result;
+    }
+
     @PostMapping("/cadastraAluno") 
     @CrossOrigin(origins = "*")
     public boolean cadastraAluno(@RequestBody final Aluno aluno) {
-        cadastraAlunoUC.run(aluno);
-        return true;
+        return cadastraAlunoUC.run(aluno);
+    }
+
+    @PostMapping("/inscreveAluno") 
+    @CrossOrigin(origins = "*")
+    public boolean inscreveAluno(String nome, String id) {
+        return inscreverAlunoUC.run(nome,id);
     }
 
 }

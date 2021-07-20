@@ -15,7 +15,7 @@ public class CadastraAlunoUC {
         this.servicoAluno = servicoAluno;
     }
     
-    public void run(Aluno aluno){
-        servicoAluno.cadastraAluno(aluno);
+    public boolean run(Aluno aluno){
+       return servicoAluno.cadastraAluno(aluno);
     }    
 }

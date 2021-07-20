@@ -53,12 +53,12 @@ public class AlunoRepository implements IAlunoRepository {
         //Podem ter mais de um aluno com o mesmo nome 
         //deveria ser com o cpf, se sobrar tempo farei com cpf 
         //aqui pega o primeiro aluno com esse nome
-        Aluno targetS = alunoCRUD.findByNome(nome).get(0);
+        List<Aluno> targetS = alunoCRUD.findByNome(nome);
         Aula targetC = aulaCRUD.findByid(id);
-        if (targetS != null && targetC != null)
+        if (targetS != null && targetC != null && targetC.getAlunos().size() < 10)
         {  
-            targetS.addAula(targetC);
-            alunoCRUD.save(targetS);
+            targetS.get(0).addAula(targetC);
+            alunoCRUD.save(targetS.get(0));
             aulaCRUD.save(targetC);
             return true;
         }

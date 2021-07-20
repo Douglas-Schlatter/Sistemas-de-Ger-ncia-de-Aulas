@@ -1,8 +1,16 @@
 INSERT INTO corredor (cpf,nome,dia_dn,mes_dn,ano_dn,genero) VALUES (1003245612, 'Edison Sulivan', 25,3,1994,'masculino');
 INSERT INTO corredor (cpf,nome,dia_dn,mes_dn,ano_dn,genero) VALUES (123456789, 'Jane Doe', 10,3,2001,'feminino');
 
-INSERT INTO aluno (cpf,nome,dia_dn,mes_dn,ano_dn,genero) VALUES (1000000000, 'Douglas Schlatter', 10,3,2001,'masculino');
-
+INSERT INTO aluno (cpf,nome,dia_dn,mes_dn,ano_dn,genero) VALUES (1, 'Douglas Schlatter', 10,3,2001,'masculino');
+INSERT INTO aluno (cpf,nome,dia_dn,mes_dn,ano_dn,genero) VALUES (2, 'Douglas Schlatter2', 10,3,2001,'masculino');
+INSERT INTO aluno (cpf,nome,dia_dn,mes_dn,ano_dn,genero) VALUES (3, 'Douglas Schlatter3', 10,3,2001,'masculino');
+INSERT INTO aluno (cpf,nome,dia_dn,mes_dn,ano_dn,genero) VALUES (4, 'Douglas Schlatter4', 10,3,2001,'masculino');
+INSERT INTO aluno (cpf,nome,dia_dn,mes_dn,ano_dn,genero) VALUES (5, 'Douglas Schlatter5', 10,3,2001,'masculino');
+INSERT INTO aluno (cpf,nome,dia_dn,mes_dn,ano_dn,genero) VALUES (6, 'Douglas Schlatter6', 10,3,2001,'masculino');
+INSERT INTO aluno (cpf,nome,dia_dn,mes_dn,ano_dn,genero) VALUES (7, 'Douglas Schlatter7', 10,3,2001,'masculino');
+INSERT INTO aluno (cpf,nome,dia_dn,mes_dn,ano_dn,genero) VALUES (8, 'Douglas Schlatter8', 10,3,2001,'masculino');
+INSERT INTO aluno (cpf,nome,dia_dn,mes_dn,ano_dn,genero) VALUES (9, 'Douglas Schlatter9', 10,3,2001,'masculino');
+INSERT INTO aluno (cpf,nome,dia_dn,mes_dn,ano_dn,genero) VALUES (10, 'Douglas Schlatter10', 10,3,2001,'masculino');
 
 INSERT INTO aula (id,codcred,idturma,dia,mes) VALUES ('A-21','A',21,2,4);
 

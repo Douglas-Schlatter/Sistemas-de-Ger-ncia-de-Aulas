@@ -69,7 +69,7 @@ public class Aula {
     }
 
 
-    public List<Aluno> getAluno() {
+    public List<Aluno> getAlunos() {
         return alunos;
     }
 
