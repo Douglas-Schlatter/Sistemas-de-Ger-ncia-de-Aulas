@@ -2,9 +2,11 @@ package com.douglas.SGA.adaptadores.controllers;
 
 import java.util.List;
 
+import com.douglas.SGA.aplicacao.casosDeUso.CadastraAlunoUC;
 import com.douglas.SGA.aplicacao.casosDeUso.CadastraAulaUC;
 import com.douglas.SGA.aplicacao.casosDeUso.CadastraCorredoresUC;
 import com.douglas.SGA.aplicacao.casosDeUso.CadastraEventoUC;
+import com.douglas.SGA.aplicacao.casosDeUso.ConsultaAlunoUC;
 import com.douglas.SGA.aplicacao.casosDeUso.ConsultaCorredoresUC;
 import com.douglas.SGA.aplicacao.casosDeUso.ConsultaEstatisticasUC;
 import com.douglas.SGA.aplicacao.casosDeUso.ConsultaEventosUC;
@@ -12,6 +14,7 @@ import com.douglas.SGA.aplicacao.casosDeUso.ConsultaPerformanceUC;
 import com.douglas.SGA.aplicacao.casosDeUso.ConsultaAulaUC;
 import com.douglas.SGA.aplicacao.dtos.EstatisticasDTO;
 import com.douglas.SGA.aplicacao.dtos.PerformanceDTO;
+import com.douglas.SGA.negocio.entidades.Aluno;
 import com.douglas.SGA.negocio.entidades.Aula;
 import com.douglas.SGA.negocio.entidades.Corredor;
 import com.douglas.SGA.negocio.entidades.Evento;
@@ -36,12 +39,15 @@ public class RequestController {
     private ConsultaPerformanceUC consultaPerformanceUC;
     private CadastraAulaUC cadastraAulaUC;
     private ConsultaAulaUC consultaAulaUC;
+    private CadastraAlunoUC cadastraAlunoUC;
+    private ConsultaAlunoUC consultaAlunoUC;
 
     @Autowired
     public RequestController(ConsultaCorredoresUC consultaCorredoresUC, CadastraCorredoresUC cadastraCorredoresUC,
             ConsultaEventosUC consultaEventosUC, CadastraEventoUC cadastraEventoUC,
             ConsultaEstatisticasUC consultaEstatisticasUC, ConsultaPerformanceUC consultaPerformanceUC,
-             CadastraAulaUC cadastraAulaUC,ConsultaAulaUC consultaAulaUC) {
+             CadastraAulaUC cadastraAulaUC,ConsultaAulaUC consultaAulaUC,ConsultaAlunoUC consultaAlunoUC
+             ,CadastraAlunoUC cadastraAlunoUC) {
         this.consultaCorredoresUC = consultaCorredoresUC;
         this.cadastraCorredoresUC = cadastraCorredoresUC;
         this.consultaEventosUC = consultaEventosUC;
@@ -50,6 +56,8 @@ public class RequestController {
         this.consultaPerformanceUC = consultaPerformanceUC;
         this.cadastraAulaUC = cadastraAulaUC;
         this.consultaAulaUC = consultaAulaUC;
+        this.cadastraAlunoUC = cadastraAlunoUC;
+        this.consultaAlunoUC = consultaAlunoUC;
     }
 
     @GetMapping("/corredores")
@@ -125,19 +133,34 @@ public class RequestController {
         return result;
     }
 
-    @PostMapping("/AbrirAula") 
-    // se tenho vários corredores precisamos "receber"
-    // para saber de quem é o evento
+    @GetMapping("/procuraAula")
     @CrossOrigin(origins = "*")
-    public boolean informaAula(String cpf,
+    public List<Aula> procurarAulas(String id) {
+        List<Aula> result = consultaAulaUC.run(id);
+        return result;
+    }
+
+    @PostMapping("/abrirAula") 
+    @CrossOrigin(origins = "*")
+    public boolean abrirAula(String cpf,
                 @RequestBody final Aula aula) {
         
         cadastraAulaUC.run(cpf, aula);
-
-
-
         return true;
     }
 
-    
+    @GetMapping("/todosAlunos")
+    @CrossOrigin(origins = "*")
+    public List<Aluno> consultaAlunos() {
+        List<Aluno> result = consultaAlunoUC.run();
+        return result;
+    }
+
+    @PostMapping("/cadastraAluno") 
+    @CrossOrigin(origins = "*")
+    public boolean cadastraAluno(@RequestBody final Aluno aluno) {
+        cadastraAlunoUC.run(aluno);
+        return true;
+    }
+
 }

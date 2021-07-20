@@ -34,9 +34,9 @@ public class AlunoRepository implements IAlunoRepository {
 
     }
 
-    public List<Aluno> procurar(String cpf) {
+    public Aluno procurar(String cpf) {
         List<Aluno> resp = alunoCRUD.findByCpf(cpf);
-        return resp;
+        return resp.get(0);
     }
 
     public void removeTodos(){

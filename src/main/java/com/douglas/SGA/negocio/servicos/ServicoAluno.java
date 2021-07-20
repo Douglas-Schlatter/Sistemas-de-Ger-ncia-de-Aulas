@@ -21,7 +21,7 @@ public class ServicoAluno {
         return alunoRep.todos();
     }
 
-    public List<Aluno> procurar(String cpf){
+    public Aluno procurar(String cpf){
         return alunoRep.procurar(cpf);
     }
 
