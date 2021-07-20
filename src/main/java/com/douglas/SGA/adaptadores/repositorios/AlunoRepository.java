@@ -57,10 +57,13 @@ public class AlunoRepository implements IAlunoRepository {
         Aula targetC = aulaCRUD.findByid(id);
         if (targetS != null && targetC != null && targetC.getAlunos().size() < 10)
         {  
-            targetS.get(0).addAula(targetC);
-            alunoCRUD.save(targetS.get(0));
-            aulaCRUD.save(targetC);
-            return true;
+            if(!targetC.getAlunos().contains(targetS.get(0)))
+            {
+                targetS.get(0).addAula(targetC);
+                alunoCRUD.save(targetS.get(0));
+                aulaCRUD.save(targetC);
+                return true;
+            }
         }
         return false;
         //alunoCRUD.save(aluno);
