@@ -1,6 +1,7 @@
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\adaptadores\repositorios\IAlunoCRUD.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\negocio\repositorios\IAlunoRepository.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\aplicacao\casosDeUso\ConsultaEventosUC.java
+C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\aplicacao\dtos\nomesDTO.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\negocio\entidades\Corredor.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\aplicacao\casosDeUso\ConsultaAulaUC.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\aplicacao\casosDeUso\CadastraAulaUC.java
@@ -10,6 +11,7 @@ C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\sr
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\negocio\repositorios\IAulaRepository.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\aplicacao\casosDeUso\CadastraEventoUC.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\aplicacao\dtos\EstatisticasDTO.java
+C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\aplicacao\servicos\ServicoInformarTotal.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\adaptadores\repositorios\CorredorRepository.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\adaptadores\repositorios\ICorredorCRUD.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\aplicacao\servicos\ICalculoEstatistica.java
@@ -21,16 +23,20 @@ C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\sr
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\aplicacao\servicos\EstatisticaNormal.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\negocio\repositorios\IEventoRepository.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\aplicacao\casosDeUso\CadastraCorredoresUC.java
+C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\aplicacao\servicos\ServicoInformarNomes.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\aplicacao\dtos\PerformanceDTO.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\adaptadores\repositorios\AulaRepository.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\adaptadores\repositorios\IEventoCRUD.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\aplicacao\casosDeUso\ConsultaAlunoUC.java
+C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\aplicacao\dtos\totalDTO.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\adaptadores\repositorios\AlunoRepository.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\aplicacao\casosDeUso\InscreverAlunoUC.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\aplicacao\casosDeUso\ConsultaEstatisticasUC.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\adaptadores\repositorios\IAulaCRUD.java
+C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\aplicacao\casosDeUso\InformarNomesUC.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\aplicacao\casosDeUso\ConsultaCorredoresUC.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\adaptadores\controllers\RequestController.java
+C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\aplicacao\casosDeUso\InformarTotalUC.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\negocio\servicos\ServicoAula.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\negocio\servicos\ServicoCorredor.java
 C:\Users\T-Gamer\Desktop\Faculdade\facul 3 sem\Tecnicas de Programação\G2\SGA\src\main\java\com\douglas\SGA\negocio\entidades\Evento.java

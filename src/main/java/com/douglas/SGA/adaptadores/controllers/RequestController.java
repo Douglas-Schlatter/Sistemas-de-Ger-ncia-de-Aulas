@@ -11,10 +11,14 @@ import com.douglas.SGA.aplicacao.casosDeUso.ConsultaCorredoresUC;
 import com.douglas.SGA.aplicacao.casosDeUso.ConsultaEstatisticasUC;
 import com.douglas.SGA.aplicacao.casosDeUso.ConsultaEventosUC;
 import com.douglas.SGA.aplicacao.casosDeUso.ConsultaPerformanceUC;
+import com.douglas.SGA.aplicacao.casosDeUso.InformarNomesUC;
+import com.douglas.SGA.aplicacao.casosDeUso.InformarTotalUC;
 import com.douglas.SGA.aplicacao.casosDeUso.InscreverAlunoUC;
 import com.douglas.SGA.aplicacao.casosDeUso.ConsultaAulaUC;
 import com.douglas.SGA.aplicacao.dtos.EstatisticasDTO;
 import com.douglas.SGA.aplicacao.dtos.PerformanceDTO;
+import com.douglas.SGA.aplicacao.dtos.nomesDTO;
+import com.douglas.SGA.aplicacao.dtos.totalDTO;
 import com.douglas.SGA.negocio.entidades.Aluno;
 import com.douglas.SGA.negocio.entidades.Aula;
 import com.douglas.SGA.negocio.entidades.Corredor;
@@ -43,13 +47,16 @@ public class RequestController {
     private CadastraAlunoUC cadastraAlunoUC;
     private ConsultaAlunoUC consultaAlunoUC;
     private InscreverAlunoUC inscreverAlunoUC;
-
+    private InformarNomesUC informarNomesUC;
+    private InformarTotalUC informarTotalUC;
     @Autowired
-    public RequestController(ConsultaCorredoresUC consultaCorredoresUC, CadastraCorredoresUC cadastraCorredoresUC,
-            ConsultaEventosUC consultaEventosUC, CadastraEventoUC cadastraEventoUC,
-            ConsultaEstatisticasUC consultaEstatisticasUC, ConsultaPerformanceUC consultaPerformanceUC,
-             CadastraAulaUC cadastraAulaUC,ConsultaAulaUC consultaAulaUC,ConsultaAlunoUC consultaAlunoUC
-             ,CadastraAlunoUC cadastraAlunoUC,InscreverAlunoUC inscreverAlunoUC) {
+    public RequestController(ConsultaCorredoresUC consultaCorredoresUC,
+             CadastraCorredoresUC cadastraCorredoresUC,ConsultaEventosUC consultaEventosUC,
+            CadastraEventoUC cadastraEventoUC,ConsultaEstatisticasUC consultaEstatisticasUC,
+             ConsultaPerformanceUC consultaPerformanceUC,CadastraAulaUC cadastraAulaUC,
+             ConsultaAulaUC consultaAulaUC,CadastraAlunoUC cadastraAlunoUC,
+            ConsultaAlunoUC consultaAlunoUC, InscreverAlunoUC inscreverAlunoUC,
+             InformarNomesUC informarNomesUC,InformarTotalUC informarTotalUC) {
         this.consultaCorredoresUC = consultaCorredoresUC;
         this.cadastraCorredoresUC = cadastraCorredoresUC;
         this.consultaEventosUC = consultaEventosUC;
@@ -61,6 +68,8 @@ public class RequestController {
         this.cadastraAlunoUC = cadastraAlunoUC;
         this.consultaAlunoUC = consultaAlunoUC;
         this.inscreverAlunoUC = inscreverAlunoUC;
+        this.informarNomesUC = informarNomesUC;
+        this.informarTotalUC = informarTotalUC;
     }
 
     @GetMapping("/corredores")
@@ -68,6 +77,8 @@ public class RequestController {
     public List<Corredor> consultaCorredor() {
         return consultaCorredoresUC.run();
     }
+
+    
 
     @GetMapping("/corredor")
     @CrossOrigin(origins = "*")
@@ -176,6 +187,19 @@ public class RequestController {
     @CrossOrigin(origins = "*")
     public boolean inscreveAluno(String nome, String id) {
         return inscreverAlunoUC.run(nome,id);
+    }
+
+    @GetMapping("/alunosInscritos") 
+    @CrossOrigin(origins = "*")
+    public nomesDTO alunosInscritos(String id) {
+        return informarNomesUC.run(id);
+    }
+
+    @GetMapping("/totalDisc") 
+    @CrossOrigin(origins = "*")
+    public totalDTO totalDisc(String codcred) {
+        
+        return informarTotalUC.run(codcred);
     }
 
 }
