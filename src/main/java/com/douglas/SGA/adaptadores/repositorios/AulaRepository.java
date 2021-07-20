@@ -50,12 +50,12 @@ public class AulaRepository implements IAulaRepository{
     public List<Aula> procurar(String idComposto) {
         return  aulaCRUD.findAll().stream().filter(e->e.getIdComposto().equals(idComposto)).collect(Collectors.toList());     
     }
-
+    //confirmar se isso gerará loop
     public boolean cadastra(String cpf, Aula aula){
         Aluno aluno = alunoCRUD.findById(cpf).get();
         //lembrar de fazer isso no aluno tambem de adicionar em
         if (aluno != null) {
-            aula.addAluno(aluno);
+            //aula.addAluno(aluno);
             aluno.addAula(aula);
             aulaCRUD.save(aula);
             return true;

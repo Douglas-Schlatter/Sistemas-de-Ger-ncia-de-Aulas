@@ -21,16 +21,18 @@ public class ServicoAluno {
         return alunoRep.todos();
     }
 
-    public List<Aluno> procurar(String cpf){
+    public Aluno procurar(String cpf){
         return alunoRep.procurar(cpf);
     }
 
-    public void cadastraAluno(Aluno aluno){
+    public boolean cadastraAluno(Aluno aluno){
         //
         // agora tenho vários alunoes
         //
         //alunoRep.removeTodos();
-        alunoRep.cadastra(aluno);
+        return alunoRep.cadastra(aluno);
     }
-    
+    public boolean inscreve(String nome,String id){
+        return alunoRep.inscreve(nome,id);
+    }
 }

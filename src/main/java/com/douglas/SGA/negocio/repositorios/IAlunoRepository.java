@@ -6,6 +6,7 @@ import com.douglas.SGA.negocio.entidades.Aluno;
 
 public interface IAlunoRepository {
     List<Aluno> todos();
-    List<Aluno> procurar(String cpf);
+    Aluno procurar(String cpf);
+    public boolean inscreve(String nome,String id);
     boolean cadastra(Aluno aluno);
 }
