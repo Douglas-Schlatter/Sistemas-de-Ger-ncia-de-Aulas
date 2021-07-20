@@ -79,8 +79,8 @@ public class Aluno  {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Corredor )) return false;
-        return cpf != null && cpf.equals(((Corredor) o).getCpf());
+        if (!(o instanceof Aluno )) return false;
+        return cpf != null && cpf.equals(((Aluno) o).getCpf());
     }
  
     @Override
